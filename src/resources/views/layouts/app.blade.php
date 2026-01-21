@@ -18,8 +18,14 @@
 <body>
   <header class="header">
     <div class="logo">
-      <a href="{{ url('/') }}">
+      <a href="{{ route('products.index') }}">
         <img class="logo-img" src="{{ asset('images/ORDINARY4.jpg') }}" alt="ORDINARY">
+      </a>
+    </div>
+
+    <div class="header-right">
+      <a href="{{ route('management.products') }}" class="btn-manage">
+        商品管理
       </a>
     </div>
   </header>

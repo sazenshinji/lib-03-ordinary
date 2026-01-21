@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Products;
 
 use Illuminate\Support\Facades\File;
+use App\Http\Controllers\Controller;
 
 class ProductController extends Controller
 {
