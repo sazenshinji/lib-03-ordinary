@@ -1,0 +1,17 @@
+/* 見出しを右に寄せる */
+h1 {
+    text-align: left;
+    margin-left: 120px; /* 左からの余白 */
+}
+
+/* テーブルを画面中央に配置 */
+table {
+    margin: 0 auto;     /* 左右中央寄せ */
+    border-collapse: collapse;
+}
+
+.btn-add-area {
+    display: flex;
+    justify-content: flex-end; /* 右寄せ */
+    margin-right: 120px;      /* 右から少し離す */
+}

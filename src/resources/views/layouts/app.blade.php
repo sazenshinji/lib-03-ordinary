@@ -8,9 +8,6 @@
   <title>ORDINARY</title>
   <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}" />
   <link rel="stylesheet" href="{{ asset('css/common.css')}}">
-  <!-- Stripe -->
-  <script src="https://js.stripe.com/v3/"></script>
-  <meta name="stripe-key" content="{{ config('services.stripe.key') }}">
 
   @yield('css')
 </head>
@@ -23,11 +20,15 @@
       </a>
     </div>
 
-    <div class="header-right">
+    <div class="nav-buttons">
       <a href="{{ route('management.products') }}" class="btn-manage">
         商品管理
       </a>
+      <a href="{{ route('management.search') }}" class="btn-search">
+        検索
+      </a>
     </div>
+
   </header>
 
   <main class="content">

@@ -6,7 +6,13 @@
 
 @section('content')
 
-<h1>商品一覧（管理画面）</h1>
+<h1>商品一覧</h1>
+
+<div class="btn-add-area">
+    <a href="{{ route('management.search') }}" class="btn-add">
+        商品追加
+    </a>
+</div>
 
 <table border="1">
     <thead>

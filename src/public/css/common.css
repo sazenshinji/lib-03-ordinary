@@ -4,9 +4,9 @@ body {
     padding: 0;
 }
 .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: flex;         /* ヘッダー内の子要素("logo"と"nav-buttons")を横並びにする */
+    align-items: center;    /* flex の“縦方向”で、子要素を中央に揃える */
+    justify-content: space-between;     /* 最初の要素を左端、最後の要素を右端に配置 */
     background: #fff;
     padding: 10px 20px;
 }
@@ -19,4 +19,16 @@ body {
     height: 90px;
     width: auto;
     margin-top: 10px;
+}
+
+.nav-buttons {
+    margin-right: 36px; /*.headerで右端に配置、これで右端から少し離す */
+}
+.nav-buttons a {
+    margin-left: 30px;
+    text-decoration: none;
+    color: #333;
+}
+.nav-buttons a:hover {
+    text-decoration: underline;
 }

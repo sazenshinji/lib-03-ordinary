@@ -9,3 +9,6 @@ Route::get('/', [ProductController::class, 'index'])->name('products.index');
 
 // 商品管理一覧
 Route::get('/list', [ProductManagerController::class, 'list'])->name('management.products');
+
+// 商品検索
+Route::get('/search', [ProductManagerController::class, 'search'])->name('management.search');
