@@ -1,17 +1,22 @@
-/* 見出しを右に寄せる */
+/* 見出しを画面中央に */
 h1 {
-    text-align: left;
-    margin-left: 120px; /* 左からの余白 */
+    text-align: center;
+    margin: 20px 0;   /* 上下に20pxのマージン */
+}
+
+/* 商品追加ボタン */
+.btn-add-area {
+    display: flex;
+    justify-content: flex-end; /* 右寄せ */
+    margin: 20px 120px 40px 0; /* 上20px / 右120px / 下40px / 左0px のマージン*/
 }
 
 /* テーブルを画面中央に配置 */
 table {
-    margin: 0 auto;     /* 左右中央寄せ */
-    border-collapse: collapse;
+    margin: 0 auto 40px auto; /*  上0px / 右auto / 下40px / 左auto のマージン */
+                              /* auto：ブラウザに「残りの余白を自動で計算させる」の意味 */
+                              /* 左右を auto にすると 要素を 左右中央に配置 することになる */
+    border-collapse: collapse;  /* 隣り合うセルの枠線を1本にまとめなさい。 */
+                                /* セルごとに枠線が付くので、これが無いと二重線になる */
 }
 
-.btn-add-area {
-    display: flex;
-    justify-content: flex-end; /* 右寄せ */
-    margin-right: 120px;      /* 右から少し離す */
-}

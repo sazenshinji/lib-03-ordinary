@@ -9,7 +9,7 @@
 <h1>商品一覧</h1>
 
 <div class="btn-add-area">
-    <a href="{{ route('management.search') }}" class="btn-add">
+    <a href="{{ route('management.products.add') }}" class="btn-add">
         商品追加
     </a>
 </div>

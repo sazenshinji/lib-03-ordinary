@@ -1,0 +1,5 @@
+.product-add-container {
+    width: 500px;          /* フォーム全体の横幅 */
+    margin: 0 auto;       /* 画面中央に配置 */
+    padding-top: 40px;    /* 上に少し余白 */
+}
