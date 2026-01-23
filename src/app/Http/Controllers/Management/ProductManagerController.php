@@ -5,8 +5,8 @@ namespace App\Http\Controllers\Management;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\Category;
-
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProductManagerController extends Controller
 {
@@ -26,7 +26,7 @@ class ProductManagerController extends Controller
         return view('management.product_add', compact('categories'));
     }
 
-    // 製品加処理
+    // 製品追加処理
     public function store(Request $request)
     {
         // バリデーション（最低限）
@@ -54,4 +54,26 @@ class ProductManagerController extends Controller
         // 一覧へリダイレクト
         return redirect()->route('management.products');
     }
+
+    // 製品詳細画面の表示
+    public function detail($id)
+    {
+        // カテゴリを一緒に取得
+        $product = Product::with('category')->findOrFail($id);
+        return view('management.product_detail', compact('product'));
+    }
+
+    public function destroy($id)
+    {
+        $product = Product::findOrFail($id);
+
+        // 画像ファイル削除
+        Storage::disk('public')->delete($product->image_path);
+
+        // DB削除
+        $product->delete();
+
+        return redirect()->route('management.products');
+    }
 }
+

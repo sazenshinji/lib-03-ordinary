@@ -22,22 +22,54 @@
             <th>商品名</th>
             <th>価格</th>
             <th>説明</th>
+            <th>削除</th>
+            <th>変更</th>
         </tr>
     </thead>
     <tbody>
         @foreach($products as $product)
         <tr>
+            {{-- 種類 --}}
             <td>{{ $product->category->name }}</td>
+
+            {{-- 製品画像 --}}
             <td>
-                <img src="{{ asset('storage/' . $product->image_path) }}" width="100">
+                <a href="{{ route('management.products.detail', $product->id) }}">
+                    <img src="{{ asset('storage/' . $product->image_path) }}" width="100">
+                </a>
             </td>
-            <td>{{ $product->name }}</td>
+
+            {{-- 製品名 --}}
+            <td>
+                <a href="{{ route('management.products.detail', $product->id) }}">
+                    {{ $product->name }}
+                </a>
+            </td>
+
+            {{-- 価格 --}}
             <td>¥{{ number_format($product->price) }}</td>
+
+            {{-- 説明 --}}
             <td>{{ $product->description }}</td>
+
+            {{-- [削除]ボタン --}}
+            <td>
+                <form action="{{ route('management.products.destroy', $product->id) }}" method="POST" style="display:inline;">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit">削除</button>
+                </form>
+            </td>
+            
+            {{-- [変更]ボタン --}}
+            <td>
+                <a href="{{ route('management.products.edit', $product->id) }}">
+                    変更
+                </a>
+            </td>
         </tr>
         @endforeach
     </tbody>
 </table>
 
-</div>
 @endsection
