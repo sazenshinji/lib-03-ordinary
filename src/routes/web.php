@@ -14,6 +14,7 @@ Route::prefix('management/products')->group(
     function () {
         // 商品管理  一覧画面 表示
         Route::get('/', [ProductManagerController::class, 'list'])->name('management.products');
+
         // 商品管理  追加画面 表示
         Route::get('/create', [ProductManagerController::class, 'add'])->name('management.products.add');
         // 商品管理  追加画面 追加処理
@@ -22,10 +23,12 @@ Route::prefix('management/products')->group(
         // 商品管理  詳細画面 表示
         Route::get('/detail/{id}', [ProductManagerController::class, 'detail'])->name('management.products.detail');
 
+        // 商品管理  変更画面 表示
+        Route::get('/edit/{id}', [ProductManagerController::class, 'edit'])->name('management.products.edit');
+        // 商品管理  変更処理
+        Route::put('/update/{id}', [ProductManagerController::class, 'update'])->name('management.products.update');
+
         // 商品管理  削除処理
         Route::delete('/delete/{id}', [ProductManagerController::class, 'destroy'])->name('management.products.destroy');
-        // 商品管理  詳細画面 変更処理
-        Route::get('/edit/{id}', [ProductManagerController::class, 'edit'])->name('management.products.edit');
-
     }
 );
