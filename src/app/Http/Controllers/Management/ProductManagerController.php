@@ -18,6 +18,7 @@ class ProductManagerController extends Controller
         return view('management.product_list', compact('products'));
     }
 
+
     // 追加画面の表示
     public function add()
     {
@@ -62,6 +63,16 @@ class ProductManagerController extends Controller
         return view('management.product_detail', compact('product'));
     }
 
+    // 削除処理
+    public function destroy($id)
+    {
+        $product = Product::findOrFail($id);
+        // DB削除
+        $product->delete();
+        return redirect()->route('management.products');
+    }
+
+
     // 変更画面の表示
     public function edit($id)
     {
@@ -96,15 +107,6 @@ class ProductManagerController extends Controller
         ]);
 
         // 一覧へリダイレクト
-        return redirect()->route('management.products');
-    }
-
-    // 削除処理
-    public function destroy($id)
-    {
-        $product = Product::findOrFail($id);
-        // DB削除
-        $product->delete();
         return redirect()->route('management.products');
     }
 }
