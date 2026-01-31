@@ -3,3 +3,34 @@
     margin: 0 auto;       /* 画面中央に配置 */
     padding-top: 40px;    /* 上に少し余白 */
 }
+
+
+/* 各入力ブロック */
+.form-group {
+    margin-bottom: 20px;   /* ← <br> の代わり */
+}
+
+/* ラベルを強調 */
+.form-label {
+    display: block;       /* ラベルと入力欄を縦並び */
+    font-weight: bold;    /* 太字 */
+    font-size: 14px;
+    margin-bottom: 6px;   /* ラベルと入力欄の間隔 */
+}
+
+/* 入力系を少し整える */
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 6px;
+    box-sizing: border-box;
+}
+
+/* プレビュー画像 */
+.image-preview {
+    max-width: 200px;
+    display: none;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+}

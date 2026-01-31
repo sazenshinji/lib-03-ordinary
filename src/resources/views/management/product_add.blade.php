@@ -13,21 +13,19 @@
         @csrf
 
         {{-- 商品画像 --}}
-        <div>
-            <label>商品画像</label><br>
+        <div class="form-group">
+            <label class="form-label">商品画像</label>
             <input type="file" name="image" id="imageInput">
         </div>
 
         {{-- プレビュー表示エリア --}}
-        <div>
-            <img id="imagePreview" src="" style="max-width:200px; display:none;">
+        <div class="form-group">
+            <img id="imagePreview" src="" class="image-preview">
         </div>
 
-        <br>
-
         {{-- 種類 --}}
-        <div>
-            <label>種類</label><br>
+        <div class="form-group">
+            <label class="form-label">種類</label>
             <select name="category_id">
                 @foreach($categories as $category)
                 <option value="{{ $category->id }}">
@@ -37,34 +35,26 @@
             </select>
         </div>
 
-        <br>
-
         {{-- 商品名 --}}
-        <div>
-            <label>商品名</label><br>
+        <div class="form-group">
+            <label class="form-label">商品名</label>
             <input type="text" name="name">
         </div>
 
-        <br>
-
         {{-- 商品の説明 --}}
-        <div>
-            <label>商品の説明</label><br>
+        <div class="form-group">
+            <label class="form-label">商品の説明</label>
             <textarea name="description" rows="4" cols="40"></textarea>
         </div>
 
-        <br>
-
         {{-- 価格 --}}
-        <div>
-            <label>価格</label><br>
+        <div class="form-group">
+            <label class="form-label">価格</label>
             <input type="number" name="price">
         </div>
 
-        <br>
-
         {{-- 追加ボタン --}}
-        <div>
+        <div class="form-group">
             <button type="submit">商品を追加する</button>
         </div>
 

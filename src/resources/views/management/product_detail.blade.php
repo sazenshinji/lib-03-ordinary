@@ -11,44 +11,34 @@
     <h1>商品詳細</h1>
 
     {{-- 商品画像 --}}
-    <div>
+    <div class="product-image">
         <img src="{{ asset('storage/' . $product->image_path) }}" width="300">
     </div>
 
-    <br>
-
     {{-- 種類 --}}
-    <div>
-        <strong>種類：</strong>
-        {{ $product->category->name }}
+    <div class="product-field">
+        <span class="label">種類</span>
+        <span class="value">{{ $product->category->name }}</span>
     </div>
-
-    <br>
 
     {{-- 商品名 --}}
-    <div>
-        <strong>商品名：</strong>
-        {{ $product->name }}
+    <div class="product-field">
+        <span class="label">商品名</span>
+        <span class="value">{{ $product->name }}</span>
     </div>
-
-    <br>
 
     {{-- 価格 --}}
-    <div>
-        <strong>価格：</strong>
-        ¥{{ number_format($product->price) }}
+    <div class="product-field">
+        <span class="label">価格</span>
+        <span class="value">¥{{ number_format($product->price) }}</span>
     </div>
-
-    <br>
 
     {{-- 説明 --}}
-    <div>
-        <strong>説明：</strong>
-        {{ $product->description }}
+    <div class="product-field">
+        <span class="label">説明</span>
+        <span class="value">{{ $product->description }}</span>
     </div>
 
-    <br><br>
-    
 </div>
 
 @endsection

@@ -14,24 +14,22 @@
         @method('PUT')
 
         {{-- 商品画像 --}}
-        <div>
-            <label>商品画像</label><br>
+        <div class="form-group">
+            <label class="form-label">商品画像</label>
             <input type="file" name="image" id="imageInput">
-            <p>現在の画像：{{ basename($product->image_path) }}</p>
+            <p class="current-image">現在の画像：{{ basename($product->image_path) }}</p>
         </div>
 
         {{-- プレビュー表示エリア --}}
-        <div>
+        <div class="form-group">
             <img id="imagePreview"
                 src="{{ asset('storage/' . $product->image_path) }}"
-                style="max-width:200px;">
+                class="image-preview">
         </div>
 
-        <br>
-
         {{-- 種類 --}}
-        <div>
-            <label>種類</label><br>
+        <div class="form-group">
+            <label class="form-label">種類</label>
             <select name="category_id">
                 @foreach($categories as $category)
                 <option value="{{ $category->id }}"
@@ -42,34 +40,26 @@
             </select>
         </div>
 
-        <br>
-
         {{-- 商品名 --}}
-        <div>
-            <label>商品名</label><br>
+        <div class="form-group">
+            <label class="form-label">商品名</label>
             <input type="text" name="name" value="{{ $product->name }}">
         </div>
 
-        <br>
-
         {{-- 商品の説明 --}}
-        <div>
-            <label>商品の説明</label><br>
+        <div class="form-group">
+            <label class="form-label">商品の説明</label>
             <textarea name="description" rows="4" cols="40">{{ $product->description }}</textarea>
         </div>
 
-        <br>
-
         {{-- 価格 --}}
-        <div>
-            <label>価格</label><br>
+        <div class="form-group">
+            <label class="form-label">価格</label>
             <input type="number" name="price" value="{{ $product->price }}">
         </div>
 
-        <br>
-
         {{-- 変更ボタン --}}
-        <div>
+        <div class="form-group">
             <button type="submit">商品を変更する</button>
         </div>
 
