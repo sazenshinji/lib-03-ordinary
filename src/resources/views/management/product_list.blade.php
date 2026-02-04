@@ -60,7 +60,7 @@
                     <button type="submit">削除</button>
                 </form>
             </td>
-            
+
             {{-- [変更]ボタン --}}
             <td>
                 <a href="{{ route('management.products.edit', $product->id) }}">
